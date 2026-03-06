@@ -10,7 +10,7 @@ submit.addEventListener('click', ()=>{
     let formData = {pname, category, scount, lcode, lupdate};
 
 
-    fetch("https://pcs-exam112-1.onrender.com/",{
+    fetch("https://pcs-exam112-backend.onrender.com/api/enroll",{
         method: 'POST',
         body: JSON.stringify(formData),
         headers:{
@@ -32,7 +32,7 @@ window.addEventListener('load', ()=>{
 
 function getUser(){
     let table="";
-    fetch('https://pcs-exam112-1.onrender.com/', {mode:'cors'})
+    fetch('https://pcs-exam112-backend.onrender.com/api/enroll', {mode:'cors'})
     .then(response=>{
         console.log(response);
         return response.json();
@@ -52,5 +52,6 @@ function getUser(){
 
     document.querySelector("#content").innerHTML=table
     })
+
 
 }
